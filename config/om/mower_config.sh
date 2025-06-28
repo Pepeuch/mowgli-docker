@@ -1,11 +1,11 @@
 ################################
 ## Hardware Specific Settings ##
 ################################
-export OM_NO_COMMS=true
 # The type of mower you're using, used to get some hardware parameters automatically
 # Currently supported:
 # YardForce500
 # CUSTOM (put your configs in ~/mower_params/)
+export OM_NO_COMMS=true
 export OM_MOWER="CUSTOM"
 
 # Your Hardware Version (more a firmware version, really). Check the OpenMower docs (https://www.openmower.de/docs) for the firmware versions.
@@ -24,7 +24,7 @@ export OM_MOWER_ESC_TYPE="xesc_mini"
 
 # Select your gamepad
 # Currently supported: ps3, xbox360
-export OM_MOWER_GAMEPAD="xbox360"
+export OM_MOWER_GAMEPAD="ps3"
 
 # Set to true to record your session.
 # Output will be stored in your $HOME
@@ -54,11 +54,11 @@ export OM_GPS_PROTOCOL=UBX
 # NTRIP Settings
 # Set to False if using external radio plugged into the Ardusimple board.
 export OM_USE_NTRIP=True
-export OM_NTRIP_HOSTNAME=caster.centipede.fr
+export OM_NTRIP_HOSTNAME=crtk.net
 export OM_NTRIP_PORT=2101
 export OM_NTRIP_USER=centipede
 export OM_NTRIP_PASSWORD=centipede
-export OM_NTRIP_ENDPOINT=OUIL
+export OM_NTRIP_ENDPOINT=NEAR
 
 # If you want to use F9R's sensor fusion, set this to true (you will also need to set DATUM_LAT and DATUM_LONG.
 # Consider this option unstable, since I don't have the F9R anymore, so I'm not able to test this.
@@ -70,10 +70,10 @@ export OM_USE_F9R_SENSOR_FUSION=False
 ##    Mower Logic Settings    ##
 ################################
 # The distance to drive forward AFTER reaching the second docking point
-export OM_DOCKING_DISTANCE=1.0
+export OM_DOCKING_DISTANCE=2.0
 
 # The distance to drive for undocking. This needs to be large enough for the robot to have GPS reception
-export OM_UNDOCK_DISTANCE=1.0
+export OM_UNDOCK_DISTANCE=2.0
 
 # How many outlines should the mover drive. It's not recommended to set this below 4.
 export OM_OUTLINE_COUNT=4
@@ -81,11 +81,12 @@ export OM_OUTLINE_COUNT=4
 # The width of mowing paths.
 # Choose it smaller than your actual mowing tool in order to have some overlap.
 # 0.13 works well for the Classic 500.
-export OM_TOOL_WIDTH=0.13
+export OM_TOOL_WIDTH=0.10
 
 # Voltages for battery to be considered full or empty
+export OM_BATTERY_CRITICAL_VOLTAGE=22.0
 export OM_BATTERY_EMPTY_VOLTAGE=23.0
-export OM_BATTERY_FULL_VOLTAGE=28.0
+export OM_BATTERY_FULL_VOLTAGE=29.0
 
 # Mower motor temperatures to stop and start mowing
 export OM_MOWING_MOTOR_TEMP_HIGH=80.0
@@ -104,9 +105,7 @@ export OM_ENABLE_MOWER=true
 # True to start mowing automatically. If this is false, you need to start manually by pressing the start button
 export OM_AUTOMATIC_MODE=0
 
-export OM_OUTLINE_OFFSET=0.05
-
-export OM_NO_COMMS=false
+export OM_OUTLINE_OFFSET=0.30
 
 # Set default GPS antenna offset
 export OM_ANTENNA_OFFSET_X=0.3
