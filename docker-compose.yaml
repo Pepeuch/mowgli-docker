@@ -36,14 +36,15 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   web:
     container_name: mowgli-web
+    image: ghcr.io/nekraus/openmowerapp:main
     labels:
       project: openmower
       app: web
-    image: nginx
-    ports:
-      - 4005:80
-    volumes:
-      - ./web:/usr/share/nginx/html:ro
+    network_mode: host
+    environment:
+      - REACT_APP_ROSBRIDGE_URL=ws://localhost:9090
+      - REACT_APP_MAP_SERVER_URL=http://localhost:8000
+      - REACT_APP_BASE_URL=http://localhost:4005
     restart: unless-stopped
 
   mosquitto:
