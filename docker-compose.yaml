@@ -36,7 +36,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   web:
     container_name: mowgli-web
-    image: ghcr.io/nekraus/openmowerapp:main
+    image: ghcr.io/Mowglifrenchtouch/openmowerapp:latest
     labels:
       project: openmower
       app: web
