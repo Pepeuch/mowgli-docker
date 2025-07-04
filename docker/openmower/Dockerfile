@@ -1,6 +1,6 @@
 ## Quickfix while waiting for OpenMower to fix multi-arch build
 # Get an image with git and apt-get update
-FROM ghcr.io/jeremysalwen/open_mower_ros:main
+FROM ghcr.io/jeremysalwen/open_mower_ros:releases-edge
 # Set timezone
 ENV TZ=Europe/Paris
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
